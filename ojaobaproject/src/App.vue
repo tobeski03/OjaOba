@@ -10,11 +10,11 @@
         color="yellow"
         elevation="1"
       >
-        <v-app-bar-nav-icon style="margin: 0"></v-app-bar-nav-icon
-        ><v-app-bar-title>Title</v-app-bar-title>
+        <v-app-bar-nav-icon color="green" style="margin: 0"></v-app-bar-nav-icon
+        ><v-app-bar-title style="color: #4caf50">Title</v-app-bar-title>
         <v-spacer></v-spacer>
         <v-btn icon style="margin: 0">
-          <v-icon>mdi-magnify</v-icon>
+          <v-icon color="green">mdi-magnify</v-icon>
         </v-btn>
         <v-btn color="green" elevation="2" depressed small> login</v-btn>
         <v-btn color="green" elevation="2" depressed small> Register </v-btn>
@@ -30,17 +30,15 @@
     <div class="d-flex mb-6">
       <v-carousel
         cycle
-        height="302"
+        height="290"
         hide-delimiter-background
         show-arrows-on-hover
       >
-        <v-carousel-item v-for="(slide, i) in slides" :key="i">
-          <v-sheet :color="colors[i]" height="100%">
-            <v-row class="fill-height" align="center" justify="center">
-              <div class="text-h2">{{ slide }} Slide</div>
-            </v-row>
-          </v-sheet>
-        </v-carousel-item>
+        <v-carousel-item
+          v-for="(carousel, i) in carousels"
+          :key="i"
+          :src="carousel.src"
+        ></v-carousel-item>
       </v-carousel>
 
       <div class="">
@@ -74,14 +72,17 @@ export default {
   name: "App",
 
   data: () => ({
-    colors: [
-      "indigo",
-      "warning",
-      "pink darken-2",
-      "red lighten-1",
-      "deep-purple accent-4",
+    carousels: [
+      {
+        src: "http://127.0.0.1:5501/img/slide-1.jpg",
+      },
+      {
+        src: "http://127.0.0.1:5501/img/slide-2.jpg",
+      },
+      {
+        src: "http://127.0.0.1:5501/img/slide-3.jpg",
+      },
     ],
-    slides: ["First", "Second", "Third", "Fourth", "Fifth"],
   }),
 };
 </script>
