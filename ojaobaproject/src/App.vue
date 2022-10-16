@@ -1,50 +1,87 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+    <v-card class="overflow-hidden">
+      <v-app-bar
+        absolute
+        prominent
+        shrink-on-scroll
+        dark
+        scroll-target="#scrolling-techniques"
+        color="yellow"
+        elevation="1"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+        <v-app-bar-nav-icon style="margin: 0"></v-app-bar-nav-icon
+        ><v-app-bar-title>Title</v-app-bar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon style="margin: 0">
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+        <v-btn color="green" elevation="2" depressed small> login</v-btn>
+        <v-btn color="green" elevation="2" depressed small> Register </v-btn>
+      </v-app-bar>
+      <v-sheet
+        id="scrolling-techniques"
+        class="overflow-y-auto"
+        max-height="125"
+      >
+        <v-container style="height: 1000px"></v-container>
+      </v-sheet>
+    </v-card>
+    <div class="d-flex mb-6">
+      <v-carousel
+        cycle
+        height="302"
+        hide-delimiter-background
+        show-arrows-on-hover
+      >
+        <v-carousel-item v-for="(slide, i) in slides" :key="i">
+          <v-sheet :color="colors[i]" height="100%">
+            <v-row class="fill-height" align="center" justify="center">
+              <div class="text-h2">{{ slide }} Slide</div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel>
 
-    <v-main>
+      <div class="">
+        <v-img
+          lazy-src="./assets/img/promotion-2.jpg"
+          max-height="145"
+          max-width="390"
+          src="./assets/img/promotion-2.jpg"
+        ></v-img>
+
+        <v-img
+          lazy-src="./assets/img/promotion-1.jpg"
+          max-height="145"
+          max-width="390"
+          src="./assets/img/promotion-1.jpg"
+        ></v-img>
+      </div>
+    </div>
+    <!-- <v-main>
       <router-view />
-    </v-main>
+    </v-main> -->
   </v-app>
 </template>
-
+<style>
+button {
+  margin: 0.5rem;
+}
+</style>
 <script>
 export default {
   name: "App",
 
   data: () => ({
-    //
+    colors: [
+      "indigo",
+      "warning",
+      "pink darken-2",
+      "red lighten-1",
+      "deep-purple accent-4",
+    ],
+    slides: ["First", "Second", "Third", "Fourth", "Fifth"],
   }),
 };
 </script>
