@@ -35,166 +35,10 @@
 <link rel="stylesheet" href="css/summernote-bs4.css">
 <link rel="stylesheet" type="css/uploadfile.css">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        function nospaces(t){
-            if(t.value.match(/\s/g)){
-                alert('Maaf, Tidak Boleh Menggunakan Spasi,..');
-                t.value=t.value.replace(/\s/g,'');
-            }
-        }
-        $(".formatNumber").on('keyup', function(){
-            var n = parseInt($(this).val().replace(/\D/g,''),10);
-            $(this).val(n.toLocaleString());
-        });
-    </script>
-<script>
-        $(document).ready(function(){
-        $('#operator').change(function(){
-            var operator_id = $(this).val();
-            $.ajax({
-            type:"POST",
-            url:"https://tajalapak.com/main/produk",
-            data:"operator_id="+operator_id,
-            success: function(response){
-                $('#produk').html(response);
-            }
-            })
-        })
-        })
-    </script>
-<style>
-        .dataTables_wrapper .row{ width:100% }
-        table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after{ display:none }
-        .dataTables_length select, .dataTables_filter input[type=search]{ height:30px }
-        .dataTables_length{ float:left }
-        .dataTables_filter{ float:right }
-        #example1 th, #example11 th{ font-weight:bold }
-        .modal-content .btn-primary{ height: 30px; font-size: 12px; }
-        .modal-content input[type=text]{ height: 30px; }
-        .iconset .fa { font-size: 13px !important; }
-        .blink_me{
-            animation:blinker 1s linear infinite;color:red
-        }
-        .blink_me:hover{
-            animation:blinker 0s linear infinite;color:red
-        }
-        @keyframes blinker{
-            50%{opacity:0}
-        }
-        .mb-10{
-          margin-bottom:0px;
-        }
-        .pricing-table-product-box {
-            -webkit-box-shadow: 0 4px 9px 0 rgba(67,65,79,.1);
-            box-shadow: 0 4px 9px 0 rgba(67,65,79,.1);
-            border: solid 2px #f5f5f5;
-        }
-        .harga {
-            font-size: 3em;
-            font-weight: 700;
-            line-height: .8em;
-          display:inline-block;
-        }
-        .currency {
-            font-size: 1em;
-            font-weight: 700;
-            margin-top: .2em;
-          display:inline-block;
-        }
-        .waktu {
-            font-size: .7em;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: end;
-            -ms-flex-align: end;
-            align-items: flex-end;
-            margin: .3em;
-          display:inline-block;
-        }
-        .waktu_block{
-          display:inline-block;
-        }
-        #Back-to-top { text-align: center; z-index: 99999; position: fixed; bottom: 70px; right: 30px; cursor: pointer; display: none; opacity: 0.7; } 
-        #Back-to-top:hover { opacity: 1; } 
-        .badge-secondary {
-            color: #fff;
-            background-color: #dd2400;
-            padding: 5px 7px 4px 7px;
-        }
-        .notif .nav-tabs .nav-link {
-            background: #3cd03c;
-            color: #fff;
-            border-top:1px solid #e3e3e3 !important;
-            border-left:1px solid #e3e3e3 !important;
-            border-right:1px solid #e3e3e3 !important;
-        }
-        .notif .badge-secondary {
-            color: #fff;
-            background-color: #00b30e;
-            padding: 5px 7px 4px 7px;
-        }
-        .notif .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-            color: #495057 !important;
-            background-color: #fff !important;
-        }
-        .penjualan .nav-tabs .nav-link {
-            background: #ff9900;
-            color: #fff;
-            border-top:1px solid #e3e3e3 !important;
-            border-left:1px solid #e3e3e3 !important;
-            border-right:1px solid #e3e3e3 !important;
-        }
-        .penjualan .badge-secondary {
-            color: #fff;
-            background-color: #dc8400;
-            padding: 5px 7px 4px 7px;
-        }
-        .penjualan .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-            color: #495057 !important;
-            background-color: #fff !important;
-        }
-        .container .ps-section__content{
-            min-height:650px;
-        }
-        input[type=number]::-webkit-inner-spin-button {
-            opacity: 1
-        }
-        .form-control{
-            border-bottom: 1px solid #cecece;
-            border-top: 0px;
-            border-left: 0px;
-            border-right: 0px;
-            background-color: #f9f9f9;
-        }
-        .multiselect-container{
-            width: 100%;
-            font-size: 13px;
-        }
-        button.multiselect {
-            font-size: 14px;
-        }
-        .multiselect-container>li {
-            border-bottom: 1px dotted #e3e3e3;
-        }
-</style>
-<style>
-        .form-sm .form-group{
-            margin-bottom: 5px !important;
-        }
-        .form-sm i{
-            margin-left: 10px;
-        }
-        .form-sm .ajax-file-upload{
-            width:100%;
-        }
-</style>
+<script src="./other-scripts/facebookapi.js"></script>
+<script src="./other-scripts/another-script.js"></script>
+<link rel="stylesheet" href="./customcss/home.css">
+<link rel="stylesheet" href="./customcss/form.css">
 </head>
 <body>
 <div class="modal fade bd-example-modal-lg" style='z-index:99999' tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -1237,7 +1081,7 @@
 </div>
 
 
-
+<!-- ------telecoms----- -->
 <div id="homepage-1">
 	<!--<div class="ps-container" style='margin-top:10px'>
 		<div class='ps-block--site-features' style='margin-top:10px; background-color:#fff; border: none; padding: 10px 0px;'>
@@ -2927,6 +2771,7 @@
         </div>
     </div>-->
 </div>
+<!-- ------end of telecoms------ -->
 <footer class="ps-footer">
 <div class="ps-container">
 	<div class="ps-footer__widgets">
@@ -3009,6 +2854,7 @@
 	</div>
 </div>
 </footer>
+<!-- ------subscribe to mailing list------ -->
 <!--<div class="ps-popup" id="subscribe" data-time="500">
 				<div class="ps-popup__content bg--cover" data-background="img/subscribe.jpg">
 					<a class="ps-popup__close" href="#"><i class="icon-cross"></i></a>
@@ -3031,7 +2877,8 @@
 			</form>
 		</div>
 	</div>-->
-<div id="back2top">
+<!-- ------end subscribe to mailing list----- -->
+	<div id="back2top">
 	<i class="pe-7s-angle-up"></i>
 </div>
 <div class="ps-site-overlay"></div>
@@ -3071,61 +2918,7 @@
 <script src="js/jquery.uploadfile.min.js"></script>
 <script src="js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxflHHc5FlDVI-J71pO7hM1QJNW1dRp4U&amp;region=GB"></script>
-<script type="text/javascript">
-        $(document).ready(function(){
-            $(function() { $(window).scroll(function() {
-                if($(this).scrollTop()>400) { $('#Back-to-top').fadeIn(); }else { $('#Back-to-top').fadeOut();}});
-                $('#Back-to-top').click(function() {
-                    $('body,html')
-                    .animate({scrollTop:0},300)
-                    .animate({scrollTop:40},200)
-                    .animate({scrollTop:0},130)
-                    .animate({scrollTop:15},100)
-                    .animate({scrollTop:0},70);
-                    });
-            });
-            $('#editor1').summernote({
-                height: "300px",
-                callbacks: {
-                    onImageUpload: function(image) {
-                        uploadImage(image[0]);
-                    },
-                    onMediaDelete : function(target) {
-                        deleteImage(target[0].src);
-                    }
-                }
-            });
-        function uploadImage(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: "https://tajalapak.com/members/upload_image",
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "POST",
-                success: function(url) {
-                    $('#editor1').summernote("insertImage", url);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-        function deleteImage(src) {
-            $.ajax({
-                data: {src : src},
-                type: "POST",
-                url: "https://tajalapak.com/members/delete_image",
-                cache: false,
-                success: function(response) {
-                    console.log(response);
-                }
-            });
-        }
-        });
-    </script>
+<script src="./other-scripts/imagehandler.js"></script>
 <script src="js/summernote-bs4.min.js"></script>
 <script>
     $(function () {
@@ -3133,81 +2926,8 @@
         $('#editor1').summernote()
     })
     </script>
-<script>
-        $(".formatNumber").on('keyup', function(){
-            var n = parseInt($(this).val().replace(/\D/g,''),10);
-            $(this).val(n.toLocaleString());
-        });
-	$(document).ready(function(){
-        $('#state').change(function(){
-          var state_id = $(this).val();
-          $.ajax({
-            type:"POST",
-            url:"https://tajalapak.com/auth/city",
-            data:"stat_id="+state_id,
-            success: function(response){
-              $('#city').html(response);
-            }
-          })
-        })
-      })
-      $(document).ready(function(){
-        $('#state_reseller').change(function(){
-          var state_id = $(this).val();
-          $.ajax({
-            type:"POST",
-            url:"https://tajalapak.com/auth/city",
-            data:"stat_id="+state_id,
-            success: function(response){
-              $('#city_reseller').html(response);
-            }
-          })
-        })
-      })
-	function toDuit(number) {
-	    var number = number.toString(), 
-	    duit = number.split('.')[0], 
-	    duit = duit.split('').reverse().join('')
-	        .replace(/(\d{3}(?!$))/g, '$1,')
-	        .split('').reverse().join('');
-	    return 'Rp ' + duit ;
-    }
-    </script>
-<script>
-    $(function () { 
-        $("#example1").DataTable({
-            "bSortable": false,
-            "lengthChange": false,
-            "oLanguage": {
-            "sSearch": "Pencarian "
-            }
-        });
-        $("#example11").DataTable({
-            "bSortable": false,
-            "lengthChange": false,
-            "oLanguage": {
-            "sSearch": "Pencarian "
-            }
-        });
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false
-        });
-        $('#example3').DataTable({
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "info": true,
-            "autoWidth": false,
-            "pageLength": 10,
-            "order": [[ 4, "desc" ]]
-        });
-    });
-    </script>
+<script src="./other-scripts/searchcity.js"></script>
+<script src="./other-scripts/dataTable.js"></script>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
@@ -3234,75 +2954,14 @@
 		</div>
 	</div>
 </div>
-<script>
-    function save(id,data2){
-        $.ajax({
-            type : "POST",
-            url  : "https://tajalapak.com/produk/save",
-            dataType : "JSON",
-            data : {id:id},
-            success: function(data){
-                $(".produk-"+id).hide().load(" .produk-"+id).fadeIn();
-                $("#exampleModalCenter").modal('show');
-                $(".wishlistcount").hide().load(" .wishlistcount").fadeIn();
-            }
-        });
-        return false;
-    }
-    </script>
-<script>
-        $(function(){
-            $(document).on('click','.quick_view',function(e){
-                e.preventDefault();
-                $("#myModalDetail").modal('show');
-                $.post("https://tajalapak.com/produk/quick_view",
-                    {id:$(this).attr('data-id')},
-                    function(html){
-                        $(".content-body").html(html);
-                    }   
-                );
-            });
-        });
-    </script>
+<script src="./other-scripts/wishlist.js"></script>
+<script src="./other-scripts/quickview.js"></script>
 <div class='hidden'>
 	<!--Start of Tawk.to Script-->
-	<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/620335389bd1f31184dba6c7/1fre8fphb';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-
-
-	</script>
+	<script type="text/javascript" src="./other-scripts/hawkscript.js"></script>
 	<!--End of Tawk.to Script-->
 	<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-	<script type="text/javascript">
-        $(document).ready(function() {
-            $('#multiple_select').multiselect({
-                enableClickableOptGroups: true,
-                enableCollapsibleOptGroups: true,
-                enableFiltering: true,
-                includeSelectAllOption: false,
-                maxHeight: 300,
-                enableCaseInsensitiveFiltering: true,
-                buttonWidth: '99%',
-                numberDisplayed: 6
-            });
-            $('#multiple_select2').multiselect({
-                enableClickableOptGroups: true,
-                enableCollapsibleOptGroups: true,
-                enableFiltering: true,
-                includeSelectAllOption: false,
-                maxHeight: 200,
-                enableCaseInsensitiveFiltering: true
-            });
-        });
-    </script>
+	<script type="text/javascript" src="./other-scripts/multiselect.js"></script>
 </div>
 </body>
 </html>
