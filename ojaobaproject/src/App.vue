@@ -27,7 +27,7 @@
         <v-container style="height: 1000px"></v-container>
       </v-sheet>
     </v-card>
-    <div class="d-flex mb-6">
+    <div class="d-flex mb-6" style="margin-bottom: 1rem !important">
       <v-carousel
         cycle
         height="290"
@@ -37,26 +37,27 @@
         <v-carousel-item
           v-for="(carousel, i) in carousels"
           :key="i"
-          :src="carousel.src"
+          :src="`img/${carousel.src}`"
         ></v-carousel-item>
       </v-carousel>
 
       <div class="">
         <v-img
-          lazy-src="./assets/img/promotion-2.jpg"
+          lazy-src="/img/promotion-2.jpg"
           max-height="145"
           max-width="390"
-          src="./assets/img/promotion-2.jpg"
+          src="/img/promotion-2.jpg"
         ></v-img>
 
         <v-img
-          lazy-src="./assets/img/promotion-1.jpg"
+          lazy-src="/img/promotion-1.jpg"
           max-height="145"
           max-width="390"
-          src="./assets/img/promotion-1.jpg"
+          src="/img/promotion-1.jpg"
         ></v-img>
       </div>
     </div>
+    <ProductCard />
     <!-- <v-main>
       <router-view />
     </v-main> -->
@@ -68,19 +69,22 @@ button {
 }
 </style>
 <script>
+import ProductCard from "./components/ProductCard";
 export default {
   name: "App",
-
+  components: {
+    ProductCard,
+  },
   data: () => ({
     carousels: [
       {
-        src: "http://127.0.0.1:5501/img/slide-1.jpg",
+        src: "slide-1.jpg",
       },
       {
-        src: "http://127.0.0.1:5501/img/slide-2.jpg",
+        src: "slide-2.jpg",
       },
       {
-        src: "http://127.0.0.1:5501/img/slide-3.jpg",
+        src: "slide-3.jpg",
       },
     ],
   }),
