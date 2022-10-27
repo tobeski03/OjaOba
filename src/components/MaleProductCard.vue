@@ -8,7 +8,7 @@
       >
         <v-card
           :elevation="active ? '2' : '0'"
-          class="mx-auto my-12"
+          class="mx-auto my-12 vcard"
           :loading="loading"
           height="370"
           width="200"
@@ -61,17 +61,17 @@
           </div>
 
           <!-- <v-card-actions>
-        <v-btn color="green" text @click="reserve"> Reserve </v-btn>
-      </v-card-actions> -->
+            <v-btn color="green" text @click="reserve"> Reserve </v-btn>
+          </v-card-actions> -->
           <v-row class="fill-height" align="center" justify="center">
             <!-- <v-scale-transition>
-              <v-icon
-                v-if="active"
-                color="white"
-                size="48"
-                v-text="'mdi-close-circle-outline'"
-              ></v-icon>
-            </v-scale-transition> -->
+                  <v-icon
+                    v-if="active"
+                    color="white"
+                    size="48"
+                    v-text="'mdi-close-circle-outline'"
+                  ></v-icon>
+                </v-scale-transition> -->
           </v-row>
         </v-card>
       </v-slide-item>
@@ -81,65 +81,57 @@
 
 <script>
 export default {
-  name: "ProductCard",
+  name: "MaleProductCard",
 
   data: () => ({
     loading: false,
-    model: null,
     selectedColor: "",
-    cartColor: "",
+    model: null,
     index: "",
     products: [
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis2.jpg",
         liked: false,
         carted: false,
       },
 
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis3.jpg",
         liked: false,
         carted: false,
       },
 
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis3.jpg",
         liked: false,
         carted: false,
       },
 
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis4.jpg",
+        liked: false,
+        carted: false,
+      },
+      {
+        link: "img/gamis5.jpg",
         liked: false,
         carted: false,
       },
 
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis6.jpg",
         liked: false,
         carted: false,
       },
 
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis11.jpg",
         liked: false,
         carted: false,
       },
 
       {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-        liked: false,
-        carted: false,
-      },
-
-      {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-        liked: false,
-        carted: false,
-      },
-
-      {
-        link: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        link: "img/gamis1.jpg",
         liked: false,
         carted: false,
       },
@@ -162,7 +154,7 @@ export default {
 </script>
 
 <style scoped>
-v-card-title {
-  color: red !important;
-}
+/* .vcard:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) !important;
+  } */
 </style>
